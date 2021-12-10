@@ -5,9 +5,9 @@ using Xamarin.Forms.Xaml;
 
 namespace JustBalance.Views
 {
-    public partial class AboutPage : ContentPage
+    public partial class BigTrees : ContentPage
     {
-        public AboutPage()
+        public BigTrees()
         {
             InitializeComponent();
         }
