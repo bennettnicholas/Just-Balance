@@ -84,6 +84,15 @@
     <FlyoutItem Title="BigTrees" Icon="icon_about.png">
         <ShellContent Route="BigTrees" ContentTemplate="{DataTemplate local:BigTrees}" />
     </FlyoutItem>
+    <FlyoutItem Title="AddTransaction" Icon="icon_about.png">
+        <ShellContent Route="AddTransaction" ContentTemplate="{DataTemplate local:AddTransaction}" />
+    </FlyoutItem>
+    <FlyoutItem Title="ViewTransaction" Icon="icon_about.png">
+        <ShellContent Route="ViewTransaction" ContentTemplate="{DataTemplate local:ViewTransaction}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Approval" Icon="icon_about.png">
+        <ShellContent Route="Approval" ContentTemplate="{DataTemplate local:Approval}" />
+    </FlyoutItem>
     <FlyoutItem Title="Browse" Icon="icon_feed.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>

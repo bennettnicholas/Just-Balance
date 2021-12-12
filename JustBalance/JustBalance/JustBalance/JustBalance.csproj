@@ -11,6 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AddTransactionPage.xaml.cs">
+      <DependentUpon>AddTransactionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ViewTransactionPage.xaml.cs">
+      <DependentUpon>ViewTransactionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ApprovalPage.xaml.cs">
+      <DependentUpon>ApprovalPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ReallyBigOlTrees.xaml.cs">
       <DependentUpon>ReallyBigOlTrees.xaml</DependentUpon>
     </Compile>
