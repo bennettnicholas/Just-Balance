@@ -11,5 +11,13 @@ namespace JustBalance.Views
         {
             InitializeComponent();
         }
+        void OnSwitchToggled(object sender, ToggledEventArgs args)
+        {
+            
+        }
+        void OnDateSelected(object sender, DateChangedEventArgs args)
+        {
+        
+        }
     }
 }
