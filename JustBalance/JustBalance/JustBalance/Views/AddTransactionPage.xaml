@@ -6,7 +6,7 @@
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
-        <vm:AboutViewModel />
+        <vm:AddTransactionViewModel />
     </ContentPage.BindingContext>
     
     <ContentPage.Resources>
@@ -16,35 +16,41 @@
     </ContentPage.Resources>
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="big-tree.jpg" VerticalOptions="Center" HeightRequest="128" />
-                </ContentView>
-            </StackLayout>
-        </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Big Ol' Trees?" FontSize="Title" TextColor="Red"/>
-                <Label Text="Big ol' Trees!!" FontSize="36" Padding="0,0,0,0" TextColor="BlueViolet" HorizontalTextAlignment="Center" BackgroundColor="Black"/>
-                <Label FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Learn more at "/>
-                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
+
+
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="5">
+
+                <Label Text="Date" FontSize="16" TextColor="Black" HorizontalTextAlignment="Center" Padding="0,0,0,0" />
+                <DatePicker x:Name="startDatePicker"
+                    Format="D"
+                    Margin="0, 0, 0, 30"
+                    DateSelected="OnDateSelected" />
+
+                <Label Text="Select the Borrower" FontSize="16" Padding="0,0,0,0" TextColor="Black" HorizontalTextAlignment="Center" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" 
+                            Margin="0,0,0,0" Text="USER"
+                            Command="{Binding OpenWebCommand}"
+                            TextColor="#C83825" CornerRadius="-1" InputTransparent="False" AutomationProperties.IsInAccessibleTree="False" />
+                    <Button Grid.Column="1"
+                            Margin="0,0,0,0" Text="USER"
+                            Command="{Binding OpenWebCommand}"
+                            TextColor="#C83825" CornerRadius="-1" InputTransparent="False" AutomationProperties.IsInAccessibleTree="False" />
+                </Grid>
+
+                <Entry Placeholder="How Much?" PlaceholderColor="Olive" Keyboard="Numeric" ReturnType="Next" Margin="0,30,0,30" />
+                <Entry Placeholder="For What?" PlaceholderColor="Olive" />
+                <Editor Placeholder="Description (Optional)" PlaceholderColor="Olive" HeightRequest="212" />
+
+                <Button Margin="0,10,0,0" Text="Submit"
+                            Command="{Binding OpenWebCommand}"
+                            TextColor="#C83825" CornerRadius="-1" InputTransparent="False" AutomationProperties.IsInAccessibleTree="False" />
+
             </StackLayout>
         </ScrollView>
     </Grid>
