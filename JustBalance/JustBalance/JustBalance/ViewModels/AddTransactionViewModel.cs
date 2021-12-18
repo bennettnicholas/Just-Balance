@@ -2,6 +2,8 @@
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace JustBalance.ViewModels
 {
@@ -10,9 +12,7 @@ namespace JustBalance.ViewModels
         public AddTransactionViewModel()
         {
             Title = "New Transaction";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://google.com"));
         }
-
-        public ICommand OpenWebCommand { get; }
     }
+
 }
