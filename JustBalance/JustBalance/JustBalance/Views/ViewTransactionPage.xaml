@@ -2,33 +2,75 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JustBalance.Views.ViewTransaction"
+             xmlns:local="clr-namespace:JustBalance.ViewModels"  
+             xmlns:model="clr-namespace:JustBalance.Models" 
              xmlns:vm="clr-namespace:JustBalance.ViewModels"
+             xmlns:ft="Xamarin.Forms.Core.dll"
              Title="{Binding Title}">
-
-    <ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <StackLayout>
+            <ListView x:Name="EntriesLV">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Title}"/>
+                                    <Label Grid.Column ="1">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="$" />
+                                                <Span Text="{Binding Cost}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Column ="2" Text="{Binding Date}"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="EntriesLV2" BackgroundColor="Gray">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Title}"/>
+                                    <Label Grid.Column ="1">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="$" />
+                                                <Span Text="{Binding Cost}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Column ="2" Text="{Binding Date}"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <FlexLayout Direction="Column" HorizontalOptions="Center">
-                <Label x:Name="lenderId" HorizontalOptions="Center" BackgroundColor="Pink" TextColor="Aquamarine"/>
-                <Label x:Name="borrowerId" HorizontalOptions="Center" BackgroundColor="Pink" TextColor="Aquamarine"/>
-                <Label x:Name="title" HorizontalOptions="Center" BackgroundColor="Pink" TextColor="Aquamarine"/>
-                <Label x:Name="description" HorizontalOptions="Center" BackgroundColor="Pink" TextColor="Aquamarine"/>
-                <Label x:Name="cost" HorizontalOptions="Center" BackgroundColor="Pink" TextColor="Aquamarine"/>
-                <Label x:Name="date" HorizontalOptions="Center" BackgroundColor="Pink" TextColor="Aquamarine"/>
-                <Label x:Name="approved" HorizontalOptions="Center" BackgroundColor="Pink" TextColor="Aquamarine"/>
+                <Label x:Name="ledgerSum" HorizontalOptions="Center" HorizontalTextAlignment="Center" BackgroundColor="Blue" TextColor="Black"/>
             </FlexLayout>
-            <ScrollView Grid.Row="1">
-                <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                
-                    <Button Margin="0,10,0,0" Text="Learn more"
-                            Clicked="OnButtonClick"
+            <StackLayout Orientation="Vertical" Padding="15,15,15,15" Spacing="10">
+
+                    <Button Margin="0,0,0,0" Text="Learn more"
+                            Clicked="getTransaction"
                             BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" />
-                </StackLayout>
-            </ScrollView>
+                            TextColor="White" 
+                            />
+             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 
