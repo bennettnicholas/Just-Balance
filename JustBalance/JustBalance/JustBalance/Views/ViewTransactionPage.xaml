@@ -17,10 +17,11 @@
                             <StackLayout>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="0" Text="{Binding Title}"/>
-                                    <Label Grid.Column ="1">
+                                    <Label Grid.Column="1" Text="{Binding BorrowerName}"/>
+                                    <Label Grid.Column ="2">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="$" />
@@ -28,7 +29,7 @@
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Grid.Column ="2" Text="{Binding Date}"/>
+                                    <Label Grid.Column ="3" Text="{Binding DateAdded}"/>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>
@@ -42,10 +43,11 @@
                             <StackLayout>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="0" Text="{Binding Title}"/>
-                                    <Label Grid.Column ="1">
+                                    <Label Grid.Column="1" Text="{Binding BorrowerName}"/>
+                                    <Label Grid.Column ="2">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="$" />
@@ -53,7 +55,7 @@
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Grid.Column ="2" Text="{Binding Date}"/>
+                                    <Label Grid.Column ="3" Text="{Binding DateAdded}"/>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>

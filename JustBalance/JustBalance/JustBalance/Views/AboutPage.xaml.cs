@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using JustBalance.Models;
+using JustBalance;
 
 namespace JustBalance.Views
 {
@@ -10,6 +12,12 @@ namespace JustBalance.Views
         public AboutPage()
         {
             InitializeComponent();
+            Title = "User";
+        }
+
+        void SubmitButtonOnClicked(object sender, EventArgs args)
+        {
+            App.UserName = UserNameText.Text;
         }
     }
 }

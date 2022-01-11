@@ -9,10 +9,14 @@ namespace JustBalance.Models
     {
         public Object Id { get; set; }
 
-        [BsonElement("lendor_id")]
+        [BsonElement("lender_id")]
         public int LenderID { get; set; }
         [BsonElement("borrower_id")]
         public int BorrowerID { get; set; }
+        [BsonElement("borrower_name")]
+        public string BorrowerName { get; set; }
+        [BsonElement("lender_name")]
+        public string LenderName { get; set; }
         [BsonElement("title")]
         public string Title { get; set; }
         [BsonElement("description")]
@@ -23,6 +27,8 @@ namespace JustBalance.Models
         public DateTime Date { get; set; }
         [BsonElement("approved")]
         public bool Approved { get; set; }
+        [BsonElement("date_added")]
+        public DateTime DateAdded { get; set; }
 
     }
 }

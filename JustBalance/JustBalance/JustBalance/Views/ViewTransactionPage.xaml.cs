@@ -30,35 +30,33 @@ namespace JustBalance.Views
             var collection = database.GetCollection<Transaction>("Transactions");
 
             var builder = Builders<Transaction>.Filter;
-            var filter = builder.Eq("lendor_id", 1);
-            filter &= builder.Eq("borrower_id", 2);
+            var filter = builder.Eq("lender_name", App.UserName);
             var entriesItems = collection.Find(filter).ToList();
 
             var builder2 = Builders<Transaction>.Filter;
-            var filter2 = builder2.Eq("lendor_id", 2);
-            filter2 &= builder2.Eq("borrower_id", 1);
+            var filter2 = builder2.Eq("borrower_name", App.UserName);
             var entriesItems2 = collection.Find(filter2).ToList();
 
             foreach (Transaction Sum in entriesItems)
             {
-                if (Sum.LenderID == 1)
+                if (Sum.LenderName == App.UserName)
                 {
                     sum += Sum.Cost;
                 }
-                else if (Sum.LenderID == 2)
+                else if (Sum.LenderName != App.UserName)
                 {
                     sum -= Sum.Cost;
                 }
             }
             foreach (Transaction Sum in entriesItems2)
             {
-                if (Sum.LenderID == 1)
-                {
-                    sum += Sum.Cost;
-                }
-                else if (Sum.LenderID == 2)
+                if (Sum.LenderName != App.UserName)
                 {
                     sum -= Sum.Cost;
+                }
+                else if (Sum.LenderName == App.UserName)
+                {
+                    sum += Sum.Cost;
                 }
             }
             ledgerSum.Text = sum.ToString();

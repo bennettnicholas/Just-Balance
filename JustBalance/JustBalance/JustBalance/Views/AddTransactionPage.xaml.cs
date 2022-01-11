@@ -38,9 +38,9 @@ namespace JustBalance.Views
             var date = startDatePicker.Date;
 
             var document = new BsonDocument {
-                { "lendor_id", 1 },
+                { "lender_id", 1 },
                 { "borrower_id", 2 },
-                { "borrowr_name", borrower_name },
+                { "borrower_name", borrower_name },
                 { "lender_name", lender_name },
                 { "title", title },
                 { "description", description },
