@@ -13,6 +13,7 @@ namespace JustBalance
             InitializeComponent();
             Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
             Routing.RegisterRoute(nameof(AddTransaction), typeof(AddTransaction));
+            Routing.RegisterRoute(nameof(ViewTransaction), typeof(ViewTransaction));
 
         }
 

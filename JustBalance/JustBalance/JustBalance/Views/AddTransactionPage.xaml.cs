@@ -50,8 +50,8 @@ namespace JustBalance.Views
 
             collection.InsertOne(document);
 
-            rightButton.BackgroundColor = Color.Accent;
-            leftButton.BackgroundColor = Color.Accent;
+            rightButton.BackgroundColor = Color.LightGray;
+            leftButton.BackgroundColor = Color.LightGray;
             addCost.Text = "";
             addTitle.Text = "";
             addDescription.Text = "";
@@ -61,16 +61,16 @@ namespace JustBalance.Views
         {
             borrower_name = leftButton.Text;
             lender_name = rightButton.Text;
-            leftButton.BackgroundColor = Color.Green;
-            rightButton.BackgroundColor = Color.Accent;
+            leftButton.BackgroundColor = Color.Black;
+            rightButton.BackgroundColor = Color.LightGray;
         }
 
         void RightButtonClicked(object sender, EventArgs args)
         {
             borrower_name = rightButton.Text;
             lender_name = leftButton.Text;
-            rightButton.BackgroundColor = Color.Green;
-            leftButton.BackgroundColor = Color.Accent;
+            rightButton.BackgroundColor = Color.Black;
+            leftButton.BackgroundColor = Color.LightGray;
         }
     }
 }

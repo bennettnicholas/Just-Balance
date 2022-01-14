@@ -14,9 +14,18 @@ namespace JustBalance.Views
             InitializeComponent();
         }
 
-        void SubmitButtonOnClicked(object sender, EventArgs args)
+        void LeftButtonClicked(object sender, EventArgs args)
         {
-            App.UserName = UserNameText.Text;
+            App.UserName = leftButton.Text;
+            leftButton.BackgroundColor = Color.Black;
+            rightButton.BackgroundColor = Color.LightGray;
+        }
+
+        void RightButtonClicked(object sender, EventArgs args)
+        {
+            App.UserName = rightButton.Text;
+            rightButton.BackgroundColor = Color.Black;
+            leftButton.BackgroundColor = Color.LightGray;
         }
     }
 }

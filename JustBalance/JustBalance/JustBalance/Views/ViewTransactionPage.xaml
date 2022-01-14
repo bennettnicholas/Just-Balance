@@ -6,68 +6,78 @@
              xmlns:model="clr-namespace:JustBalance.Models" 
              xmlns:vm="clr-namespace:JustBalance.ViewModels"
              xmlns:ft="Xamarin.Forms.Core.dll"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             BackgroundColor="White" >
+             
 
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="EntriesLV">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Text="{Binding Title}"/>
-                                    <Label Grid.Column="1" Text="{Binding BorrowerName}"/>
-                                    <Label Grid.Column ="2">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="$" />
-                                                <Span Text="{Binding Cost}"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    <Label Grid.Column ="3" Text="{Binding DateAdded}"/>
-                                </Grid>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView x:Name="EntriesLV2" BackgroundColor="Gray">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Text="{Binding Title}"/>
-                                    <Label Grid.Column="1" Text="{Binding BorrowerName}"/>
-                                    <Label Grid.Column ="2">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="$" />
-                                                <Span Text="{Binding Cost}"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    <Label Grid.Column ="3" Text="{Binding DateAdded}"/>
-                                </Grid>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <FlexLayout Direction="Column" HorizontalOptions="Center">
-                <Label x:Name="ledgerSum" HorizontalOptions="Center" HorizontalTextAlignment="Center" BackgroundColor="Blue" TextColor="Black"/>
+        <StackLayout Margin="10, 10, 10, 10">
+            <FlexLayout Direction="Column" HorizontalOptions="Center" Margin="30,30,30,30" >
+                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" BackgroundColor="LightGray" TextColor="{StaticResource Primary}" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Sum is $" />
+                            <Span x:Name="ledgerSum" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </FlexLayout>
+            <ListView x:Name="EntriesLV" Margin="10, 10, 10, 10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Title}"/>
+                                    <Label Grid.Column="1" Text="{Binding BorrowerName}"/>
+                                    <Label Grid.Column ="2">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="$" />
+                                                <Span Text="{Binding Cost}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Column ="3" Text="{Binding DateAdded}"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="EntriesLV2" BackgroundColor="Gray" Margin="10, 10, 10, 10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Title}"/>
+                                    <Label Grid.Column="1" Text="{Binding BorrowerName}"/>
+                                    <Label Grid.Column ="2">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="$" />
+                                                <Span Text="{Binding Cost}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Column ="3" Text="{Binding DateAdded}"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
             <StackLayout Orientation="Vertical" Padding="15,15,15,15" Spacing="10">
 
-                    <Button Margin="0,0,0,0" Text="Learn more"
+                    <Button Margin="0,0,0,0" Text="Get Items"
                             Clicked="getTransaction"
                             BackgroundColor="{StaticResource Primary}"
                             TextColor="White" 

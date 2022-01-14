@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JustBalance.Views.AboutPage"
              xmlns:vm="clr-namespace:JustBalance.ViewModels"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             BackgroundColor="White" >
     
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
@@ -11,7 +12,7 @@
     
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="Accent">#7a0d21</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -20,14 +21,22 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <Entry x:Name="UserNameText" Placeholder="NICK or GEORGE" PlaceholderColor="Olive" />
-            <Button Margin="0,0,0,0" Text="Submit"
-                            Clicked="SubmitButtonOnClicked"
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White" 
-                            />
-        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" 
+                            x:Name="leftButton"
+                            Margin="30,30,30,30" Text="GEORGE"
+                            Clicked="LeftButtonClicked"
+                            TextColor="{StaticResource Primary}" BackgroundColor="LightGray" CornerRadius="-1" InputTransparent="False" AutomationProperties.IsInAccessibleTree="False" />
+            <Button Grid.Column="1"
+                            x:Name="rightButton"
+                            Margin="30,30,30,30" Text="NICK"
+                            Clicked="RightButtonClicked"
+                            TextColor="{StaticResource Primary}" BackgroundColor="LightGray" CornerRadius="-1" InputTransparent="False" AutomationProperties.IsInAccessibleTree="False" />
+        </Grid>
     </Grid>
 
 </ContentPage>
