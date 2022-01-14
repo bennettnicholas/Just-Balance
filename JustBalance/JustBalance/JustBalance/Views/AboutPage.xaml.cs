@@ -12,7 +12,6 @@ namespace JustBalance.Views
         public AboutPage()
         {
             InitializeComponent();
-            Title = "User";
         }
 
         void SubmitButtonOnClicked(object sender, EventArgs args)

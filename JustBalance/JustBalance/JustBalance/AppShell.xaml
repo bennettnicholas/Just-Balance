@@ -81,20 +81,11 @@
     <FlyoutItem Title="About" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="BigTrees" Icon="icon_about.png">
-        <ShellContent Route="BigTrees" ContentTemplate="{DataTemplate local:BigTrees}" />
-    </FlyoutItem>
     <FlyoutItem Title="AddTransaction" Icon="icon_about.png">
         <ShellContent Route="AddTransaction" ContentTemplate="{DataTemplate local:AddTransaction}" />
     </FlyoutItem>
     <FlyoutItem Title="ViewTransaction" Icon="icon_about.png">
         <ShellContent Route="ViewTransaction" ContentTemplate="{DataTemplate local:ViewTransaction}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Approval" Icon="icon_about.png">
-        <ShellContent Route="Approval" ContentTemplate="{DataTemplate local:Approval}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Browse" Icon="icon_feed.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
@@ -108,9 +99,6 @@
         content you can do so by calling 
         await Shell.Current.GoToAsync("//LoginPage");
     -->
-    <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
-    </TabBar>
 
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.

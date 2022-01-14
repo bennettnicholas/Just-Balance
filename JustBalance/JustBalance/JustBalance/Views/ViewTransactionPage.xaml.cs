@@ -1,14 +1,7 @@
 ﻿using JustBalance.Models;
-using JustBalance.ViewModels;
-using JustBalance.Views;
 using System;
-using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using MongoDB.Driver;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using System.Collections.ObjectModel;
 
 namespace JustBalance.Views
 {
@@ -23,7 +16,7 @@ namespace JustBalance.Views
         void getTransaction(object sender, EventArgs args)
         {
             double sum = 0;
-            var settings = MongoClientSettings.FromConnectionString("mongodb://application:HelloWorld@justbalance-shard-00-00.5omg9.mongodb.net:27017,justbalance-shard-00-01.5omg9.mongodb.net:27017,justbalance-shard-00-02.5omg9.mongodb.net:27017/JustBalance?ssl=true&replicaSet=atlas-cz5mx5-shard-0&authSource=admin&retryWrites=true&w=majority");
+            MongoClientSettings settings = MongoClientSettings.FromConnectionString("mongodb://application:HelloWorld@justbalance-shard-00-00.5omg9.mongodb.net:27017,justbalance-shard-00-01.5omg9.mongodb.net:27017,justbalance-shard-00-02.5omg9.mongodb.net:27017/JustBalance?ssl=true&replicaSet=atlas-cz5mx5-shard-0&authSource=admin&retryWrites=true&w=majority");
             var client = new MongoClient(settings);
             var database = client.GetDatabase("JustBalance");
 

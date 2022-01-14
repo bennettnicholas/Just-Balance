@@ -1,5 +1,4 @@
-﻿using JustBalance.Services;
-using JustBalance.Views;
+﻿using JustBalance.Views;
 using System;
 using Xamarin.Forms;
 using JustBalance.Models;
@@ -14,7 +13,6 @@ namespace JustBalance
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
             
         }
